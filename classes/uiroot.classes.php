@@ -19,10 +19,14 @@
         }
 
         public function render(){
-            echo '<div style="padding: 25px 0">Текст: ';
-            $input = new Input();
-            echo '</div>';
-
+            ?>
+                <h1>Settings</h1>
+                <div style="padding: 25px 0">Текст: 
+            <?
+                $input = new Input();
+            ?>
+                </div>
+            <?
         }
     }
 ?>
