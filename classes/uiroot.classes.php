@@ -5,9 +5,10 @@
 
 
     class UiRoot {
+        public $page;
 
         function __construct(){
-            $settingsPage = new Page(
+            $this->page = new Page(
                 'Settings',
                 'Settings',
                 'manage_options',
@@ -15,18 +16,17 @@
                 array($this, 'render'),
             );
 
-            $settingsPage->init_menu_page();
+            $this->page->init_menu_page();
         }
 
         public function render(){
-            ?>
-                <h1>Settings</h1>
-                <div style="padding: 25px 0">Текст: 
-            <?
-                $input = new Input();
-            ?>
-                </div>
-            <?
+            $this->page->form_start('', 'POST');
+
+            $this->page->h1('Settings');
+
+            $input = new Input('first', 'Настройка1');
+
+            $this->page->form_end('Сохранить');
         }
     }
 ?>
