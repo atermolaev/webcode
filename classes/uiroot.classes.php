@@ -7,7 +7,7 @@
     class UiRoot {
 
         function __construct(){
-            $page = new Page(
+            $settingsPage = new Page(
                 'Settings',
                 'Settings',
                 'manage_options',
@@ -15,7 +15,7 @@
                 array($this, 'render'),
             );
 
-            $page->init();
+            $settingsPage->init_menu_page();
         }
 
         public function render(){
